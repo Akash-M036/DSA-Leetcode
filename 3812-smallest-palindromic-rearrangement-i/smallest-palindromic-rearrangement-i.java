@@ -1,40 +1,25 @@
 class Solution {
     public String smallestPalindrome(String s) {
         int n = s.length();
-        int[] freq = new int[26];
+        int[] f = new int[26];
         for (char c : s.toCharArray()) {
-            freq[c - 'a']++;
+            f[c - 'a']++;
         }
-        StringBuilder sb = new StringBuilder();
+        String m = "";
+        StringBuilder hb = new StringBuilder();
         for (int i = 0; i < 26; i++) {
-            if (sb.length() == n / 2) {
-                break;
+            if (f[i] % 2 != 0) {
+                m = String.valueOf((char) (i + 'a'));
             }
-            int targetcount = freq[i] / 2;
-            while (targetcount > 0) {
-                if (sb.length() == n / 2) {
-                    break;
-                }
-                sb.append((char) (i + 'a'));
-                freq[i]--;
-                targetcount--;
+            int t = f[i] / 2;
+            for (int j = 0; j < t; j++) {
+                hb.append((char) (i + 'a'));
             }
         }
-        Arrays.fill(freq, 0);
-        for (char c : s.toCharArray()) {
-            freq[c - 'a']++;
-        }
-        String firsthalf = sb.toString();
-        String mid = "";
-        if (n % 2 != 0) {
-            for (int i = 0; i < 26; i++) {
-                if (freq[i] % 2 != 0) {
-                    mid = String.valueOf((char) (i + 'a'));
-                    break;
-                }
-            }
-        }
-        String secondhalf = sb.reverse().toString();
-        return firsthalf + mid + secondhalf;
+        char[] hc = hb.toString().toCharArray();
+        Arrays.sort(hc);
+        String fh = new String(hc);
+        String sh = new StringBuilder(fh).reverse().toString();
+        return fh + m + sh;
     }
 }
