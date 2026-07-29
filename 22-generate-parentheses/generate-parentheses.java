@@ -19,7 +19,7 @@ class Solution {
         }
     }
     public List<String> generateParenthesis(int n) {
-        ans.clear();
+       
         para(n, new StringBuilder(), 0, 0);
         return ans;
     }
