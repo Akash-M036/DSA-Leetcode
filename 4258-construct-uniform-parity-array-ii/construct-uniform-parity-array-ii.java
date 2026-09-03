@@ -23,8 +23,10 @@ class Solution {
          //odd
         for(int i =0; i< nums1.length;i++){
             if(nums1[i]%2!=1){
-                if(cntodd==0)
+                if(cntodd==0){
                     ans = false;
+                    break;
+                }
             }
             if(nums1[i]%2==0)
                 cnteven++;
