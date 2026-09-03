@@ -4,6 +4,7 @@ class Solution {
         e-o =o -->change to odd only
         e-e =e -->not req
     */
+    // can calculate through min value
     public boolean uniformArray(int[] nums1) {
         int cntodd =0;
         int cnteven =0;
