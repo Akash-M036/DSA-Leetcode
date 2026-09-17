@@ -12,20 +12,41 @@
  *         this.right = right;
  *     }
  * }
- */
+//  */
+// class Solution {
+//     public void dfs(TreeNode root, int k,PriorityQueue<Integer> pq){
+//         if(root==null)
+//             return;
+//         pq.offer(root.val);
+//         if(pq.size()>k)
+//             pq.poll();
+//         dfs(root.left,k,pq);
+//         dfs(root.right,k,pq);
+//     }
+//     public int kthSmallest(TreeNode root, int k) {
+//         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+//         dfs(root,k,pq);
+//         return pq.peek();
+//     }
+// }
+
 class Solution {
-    public void dfs(TreeNode root, int k,PriorityQueue<Integer> pq){
+   
+    int ans =0;
+    int cnt =0;
+    public void dfs(TreeNode root, int k){
         if(root==null)
             return;
-        pq.offer(root.val);
-        if(pq.size()>k)
-            pq.poll();
-        dfs(root.left,k,pq);
-        dfs(root.right,k,pq);
+        // pq.offer(root.val);
+        dfs(root.left,k);
+        cnt++;
+        if(cnt==k)
+            ans = root.val;
+        dfs(root.right,k);
     }
     public int kthSmallest(TreeNode root, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-        dfs(root,k,pq);
-        return pq.peek();
+        // PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        dfs(root,k);
+        return ans;
     }
 }
