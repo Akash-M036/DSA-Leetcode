@@ -1,10 +1,11 @@
 class Solution {
     public int reverseDegree(String s) {
-        int i =1;
+       // int i =1;
         int ans =0;
-        for( char ch : s.toCharArray()){
-            ans +=((26-ch+'a')*i);
-            i++;
+        for(int i=0; i< s.length();i++){
+            char ch = s.charAt(i);
+            ans +=((26-ch+'a')*(i+1));
+         //   i++;
         }
         return ans;
     }
