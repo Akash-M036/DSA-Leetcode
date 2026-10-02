@@ -4,7 +4,7 @@ class Solution {
     StringBuilder sb = new StringBuilder();
     public void para(int cntl, int cntr, int n) {
         if(cntl+cntr== 2*n && cntl==n && cntr ==n){
-            if(!ans.contains(sb.toString()))
+            // if(!ans.contains(sb.toString()))
             ans.add(sb.toString());
             return ;
         }
