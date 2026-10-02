@@ -16,11 +16,11 @@ class Solution {
         sb.append(')');
         para(cntl,cntr+1,n);
          sb.deleteCharAt(sb.length()-1);
-         sb.append('(');
-         sb.append(')');
-        para(cntl+1,cntr+1,n);
-        sb.deleteCharAt(sb.length()-1);
-        sb.deleteCharAt(sb.length()-1);
+        //  sb.append('(');
+        //  sb.append(')');
+        // para(cntl+1,cntr+1,n);
+        // sb.deleteCharAt(sb.length()-1);
+        // sb.deleteCharAt(sb.length()-1);
         return;
         
     }
