@@ -8,7 +8,7 @@ class Solution {
                 ans.add("Fizz");
             else if(i%5==0)
                 ans.add("Buzz");
-            else ans.add(i+"");
+            else ans.add(String.valueOf(i));
         }
         return ans;
     }
