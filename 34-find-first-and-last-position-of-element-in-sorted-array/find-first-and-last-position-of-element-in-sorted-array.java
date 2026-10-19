@@ -5,7 +5,7 @@ class Solution {
         int ans =-1;
         while(low<=high){
             int mid = (low+high)/2;
-            System.out.println(nums[mid]);
+          //  System.out.println(nums[mid]);
             if(nums[mid]<=target){
                 low = mid+1;
                 ans = mid;
