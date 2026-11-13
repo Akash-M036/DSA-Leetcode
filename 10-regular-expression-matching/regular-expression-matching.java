@@ -16,10 +16,12 @@ class Solution {
        
         if (j < p.length() - 1 && p.charAt(j + 1) == '*') {
             a = check(i,j+2,s,p);                 
-            if (match) b = check(i+1,j,s,p);    
+            if (match) 
+                b=check(i+1,j,s,p);    
         } 
         else {
-            if (match) c = check(i+1,j+1,s,p);
+            if(match)
+             c=check(i+1,j+1,s,p);
             }
 
         return dp[i][j] = a||b || c;
